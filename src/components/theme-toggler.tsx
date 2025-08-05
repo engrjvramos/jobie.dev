@@ -1,17 +1,13 @@
 'use client';
 
 import { MoonIcon, SunIcon } from 'lucide-react';
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
+import { Toggle } from '@/components/ui/toggle';
 import { useTheme } from 'next-themes';
 
 export default function ThemeToggler() {
-  const id = useId();
-  const { setTheme, resolvedTheme } = useTheme();
-
-  const [checked, setChecked] = useState<boolean>(true);
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -19,36 +15,33 @@ export default function ThemeToggler() {
   }, []);
 
   useEffect(() => {
-    if (resolvedTheme === 'light') setChecked(true);
-    else if (resolvedTheme === 'dark') setChecked(false);
-  }, [resolvedTheme]);
-
-  const handleToggle = (isChecked: boolean) => {
-    setChecked(isChecked);
-    setTheme(isChecked ? 'light' : 'dark');
-  };
+    if (resolvedTheme === 'light') setTheme('light');
+    else if (resolvedTheme === 'dark') setTheme('dark');
+  }, [resolvedTheme, setTheme]);
 
   if (!mounted) return null;
 
   return (
-    <div>
-      <div className="relative inline-grid h-9 grid-cols-[1fr_1fr] items-center text-sm font-medium">
-        <Switch
-          id={id}
-          checked={checked}
-          onCheckedChange={handleToggle}
-          className="peer data-[state=checked]:bg-input/50 data-[state=unchecked]:bg-input/50 absolute inset-0 h-[inherit] w-auto [&_span]:h-full [&_span]:w-1/2 [&_span]:transition-transform [&_span]:duration-300 [&_span]:ease-[cubic-bezier(0.16,1,0.3,1)] [&_span]:data-[state=checked]:translate-x-full [&_span]:data-[state=checked]:rtl:-translate-x-full"
+    <div className="relative">
+      <Toggle
+        variant="outline"
+        className="group data-[state=on]:hover:bg-muted size-9 cursor-pointer data-[state=on]:bg-transparent"
+        pressed={theme === 'dark'}
+        onPressedChange={() => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))}
+        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      >
+        {/* Note: After dark mode implementation, rely on dark: prefix rather than group-data-[state=on]: */}
+        <MoonIcon
+          size={16}
+          className="shrink-0 scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100"
+          aria-hidden="true"
         />
-        <span className="peer-data-[state=checked]:text-muted-foreground/70 pointer-events-none relative ms-0.5 flex min-w-8 items-center justify-center text-center">
-          <MoonIcon size={16} aria-hidden="true" />
-        </span>
-        <span className="peer-data-[state=unchecked]:text-muted-foreground/70 pointer-events-none relative me-0.5 flex min-w-8 items-center justify-center text-center">
-          <SunIcon size={16} aria-hidden="true" />
-        </span>
-      </div>
-      <Label htmlFor={id} className="sr-only">
-        Theme Toggler
-      </Label>
+        <SunIcon
+          size={16}
+          className="absolute shrink-0 scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-0"
+          aria-hidden="true"
+        />
+      </Toggle>
     </div>
   );
 }

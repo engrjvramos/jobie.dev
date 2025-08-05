@@ -1,0 +1,76 @@
+import {
+  BetterAuth,
+  ChakraUIIcon,
+  CSSIcon,
+  Expressjs,
+  Figma,
+  FramerIcon,
+  GitHub,
+  GitLab,
+  HeadlessUIIcon,
+  HTML5Icon,
+  JavaScriptIcon,
+  Neon,
+  NextjsIcon,
+  Nodejs,
+  PostgreSQL,
+  Postman,
+  PrismaIcon,
+  ReactIcon,
+  Redis,
+  Resend,
+  SassIcon,
+  ShadcnuiIcon,
+  Socketio,
+  SQLite,
+  Swagger,
+  TailwindCSSIcon,
+  TypeScriptIcon,
+  Vercel,
+} from '@/components/svg';
+
+export const TECH_ICONS = [
+  { Icon: ShadcnuiIcon, name: 'Shadcn UI' },
+  { Icon: TypeScriptIcon, name: 'TypeScript' },
+  { Icon: ReactIcon, name: 'React' },
+  { Icon: NextjsIcon, name: 'Next.js' },
+  { Icon: TailwindCSSIcon, name: 'Tailwind CSS' },
+  { Icon: PrismaIcon, name: 'Prisma' },
+];
+
+export const SKILLS_FRONTEND = [
+  { Icon: HTML5Icon, name: 'HTML5' },
+  { Icon: CSSIcon, name: 'CSS' },
+  { Icon: SassIcon, name: 'Sass' },
+  { Icon: JavaScriptIcon, name: 'JavaScript' },
+  { Icon: TypeScriptIcon, name: 'TypeScript' },
+  { Icon: ReactIcon, name: 'React' },
+  { Icon: NextjsIcon, name: 'Next.js' },
+  { Icon: TailwindCSSIcon, name: 'Tailwind CSS' },
+  { Icon: ShadcnuiIcon, name: 'Shadcn UI' },
+  { Icon: HeadlessUIIcon, name: 'Headless UI' },
+  { Icon: ChakraUIIcon, name: 'Chakra UI' },
+  { Icon: FramerIcon, name: 'Framer Motion' },
+  { Icon: Socketio, name: 'Socket.io' },
+];
+
+export const SKILLS_BACKEND = [
+  { Icon: Nodejs, name: 'NodeJS' },
+  { Icon: Expressjs, name: 'ExpressJS' },
+  { Icon: PostgreSQL, name: 'PostreSQL' },
+  { Icon: SQLite, name: 'SQLite' },
+  { Icon: Redis, name: 'Redis' },
+  { Icon: PrismaIcon, name: 'Prisma' },
+];
+
+export const TOOLS_AND_PLATFORMS = [
+  { Icon: GitLab, name: 'GitLab' },
+  { Icon: GitHub, name: 'GitHub' },
+  { Icon: Vercel, name: 'Vercel' },
+  { Icon: Neon, name: 'Neon' },
+  { Icon: BetterAuth, name: 'Better Auth' },
+  { Icon: Resend, name: 'Resend' },
+  { Icon: Swagger, name: 'Swagger' },
+  { Icon: Postman, name: 'Postman' },
+  { Icon: Figma, name: 'Figma' },
+];

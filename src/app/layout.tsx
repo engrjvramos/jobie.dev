@@ -1,16 +1,18 @@
 import { ThemeProvider } from '@/components/theme-provider';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Host_Grotesk, Onest } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const host_grotesk = Host_Grotesk({
   subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--display-family',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const onest = Onest({
   subsets: ['latin'],
+  weight: ['400'],
+  variable: '--text-family',
 });
 
 export const metadata: Metadata = {
@@ -58,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${host_grotesk.variable} ${onest.variable} font-text antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
         </ThemeProvider>
