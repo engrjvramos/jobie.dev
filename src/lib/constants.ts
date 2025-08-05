@@ -23,13 +23,15 @@ import {
   ShadcnuiIcon,
   Socketio,
   SQLite,
+  Stripe,
   Swagger,
   TailwindCSSIcon,
   TypeScriptIcon,
   Vercel,
 } from '@/components/svg';
+import { TSkill } from './types';
 
-export const TECH_ICONS = [
+export const TECH_ICONS: TSkill[] = [
   { Icon: ShadcnuiIcon, name: 'Shadcn UI' },
   { Icon: TypeScriptIcon, name: 'TypeScript' },
   { Icon: ReactIcon, name: 'React' },
@@ -38,7 +40,7 @@ export const TECH_ICONS = [
   { Icon: PrismaIcon, name: 'Prisma' },
 ];
 
-export const SKILLS_FRONTEND = [
+export const SKILLS_FRONTEND: TSkill[] = [
   { Icon: HTML5Icon, name: 'HTML5' },
   { Icon: CSSIcon, name: 'CSS' },
   { Icon: SassIcon, name: 'Sass' },
@@ -52,9 +54,14 @@ export const SKILLS_FRONTEND = [
   { Icon: ChakraUIIcon, name: 'Chakra UI' },
   { Icon: FramerIcon, name: 'Framer Motion' },
   { Icon: Socketio, name: 'Socket.io' },
+  {
+    imageSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg',
+    name: 'Zustand',
+  },
+  { imageSrc: '/images/tanstack.svg', name: 'Tanstack Query' },
 ];
 
-export const SKILLS_BACKEND = [
+export const SKILLS_BACKEND: TSkill[] = [
   { Icon: Nodejs, name: 'NodeJS' },
   { Icon: Expressjs, name: 'ExpressJS' },
   { Icon: PostgreSQL, name: 'PostreSQL' },
@@ -63,7 +70,7 @@ export const SKILLS_BACKEND = [
   { Icon: PrismaIcon, name: 'Prisma' },
 ];
 
-export const TOOLS_AND_PLATFORMS = [
+export const TOOLS_AND_PLATFORMS: TSkill[] = [
   { Icon: GitLab, name: 'GitLab' },
   { Icon: GitHub, name: 'GitHub' },
   { Icon: Vercel, name: 'Vercel' },
@@ -72,5 +79,6 @@ export const TOOLS_AND_PLATFORMS = [
   { Icon: Resend, name: 'Resend' },
   { Icon: Swagger, name: 'Swagger' },
   { Icon: Postman, name: 'Postman' },
+  { Icon: Stripe, name: 'Stripe' },
   { Icon: Figma, name: 'Figma' },
 ];

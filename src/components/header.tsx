@@ -16,7 +16,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-background sticky top-0 z-50 flex items-center justify-between p-5">
+    <header className="bg-accent fixed top-0 left-0 z-50 flex w-full items-center justify-between p-5">
       <nav className="flex items-center gap-2 sm:gap-5">
         {HEADER_NAVIGATION.map((item) => (
           <Link
