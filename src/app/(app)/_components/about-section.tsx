@@ -1,6 +1,6 @@
 export default function AboutSection() {
   return (
-    <section className="mx-auto max-w-6xl">
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-20">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <h1 className="text-lg uppercase">About</h1>
         <div className="text-muted-foreground space-y-3 text-pretty md:col-span-2">

@@ -38,6 +38,65 @@ export const TECH_ICONS: TSkill[] = [
   { Icon: PrismaIcon, name: 'Prisma' },
 ];
 
+export const SKILLSET = [
+  {
+    type: 'frontend',
+    skills: [
+      { Icon: TypeScriptIcon, name: 'TypeScript' },
+      { Icon: ReactIcon, name: 'React' },
+      { Icon: NextjsIcon, name: 'Next.js' },
+      { Icon: TailwindCSSIcon, name: 'Tailwind CSS' },
+      { Icon: SassIcon, name: 'Sass' },
+      { Icon: HeadlessUIIcon, name: 'Headless UI' },
+      { Icon: ChakraUIIcon, name: 'Chakra UI' },
+      { Icon: ShadcnuiIcon, name: 'Shadcn UI' },
+      { Icon: FramerIcon, name: 'Framer Motion' },
+      { Icon: Socketio, name: 'Socket.io' },
+      { Icon: Redux, name: 'Redux Toolkit' },
+      {
+        imageSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg',
+        name: 'Zustand',
+      },
+      {
+        imageSrc: 'https://logo.svgcdn.com/l/jotai.svg',
+        name: 'Jotai',
+      },
+      { Icon: ReactHookForm, name: 'React Hook Form' },
+      { imageSrc: '/images/tanstack.svg', name: 'Tanstack Query' },
+      { Icon: BetterAuth, name: 'Better Auth' },
+      { Icon: Resend, name: 'Resend' },
+      { Icon: Stripe, name: 'Stripe' },
+    ],
+  },
+  {
+    type: 'backend',
+    skills: [
+      { Icon: Nodejs, name: 'Node.js' },
+      { Icon: Expressjs, name: 'Express' },
+    ],
+  },
+  {
+    type: 'database/orm',
+    skills: [
+      { Icon: MySQL, name: 'MySQL' },
+      { Icon: SQLite, name: 'SQLite' },
+      { Icon: PostgreSQL, name: 'PostreSQL' },
+      { Icon: Neon, name: 'Neon' },
+      { Icon: Redis, name: 'Redis' },
+      { Icon: PrismaIcon, name: 'Prisma' },
+    ],
+  },
+  {
+    type: 'cloud/devops',
+    skills: [
+      { Icon: Vercel, name: 'Vercel' },
+      { Icon: GitLab, name: 'GitLab CI/CD' },
+      { Icon: GitHub, name: 'GitHub' },
+      { Icon: Cloudflare, name: 'Cloudflare' },
+    ],
+  },
+];
+
 export const SKILLS_FRONTEND: TSkill[] = [
   { Icon: TypeScriptIcon, name: 'TypeScript' },
   { Icon: ReactIcon, name: 'React' },

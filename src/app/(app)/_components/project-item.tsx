@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion, MotionProps } from 'motion/react';
 import * as React from 'react';
 
@@ -32,7 +32,7 @@ const DEFAULT_PRODUCT: TProjectData = {
   actionLabel: 'View Repository',
   slug: 'shsf-dashboard',
   alt: ['Canvasium light mode interface showing home page', 'Canvasium dark mode interface showing painting page'],
-  techStack: ['shadcn/ui', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+  techStack: ['Shadcn UI', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
   thumbnail: ['/projects/canvasium_light.png', '/projects/slideshow_dark.png'],
 };
 
@@ -162,32 +162,28 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
 
         <div className="flex flex-wrap gap-2 pb-1">
           {project.techStack.map((tag, index) => (
-            <Badge
-              key={index}
-              variant={'outline'}
-              className="border-secondary-500 rounded border px-3 py-0.5 font-mono text-xs whitespace-nowrap"
-            >
+            <Badge key={index} variant={'secondary'} className="">
               {tag}
             </Badge>
           ))}
         </div>
 
-        <div className="flex items-center justify-end gap-2 text-xs">
+        <div className="border-input mt-6 grid grid-cols-[repeat(auto-fill,minmax(9rem,1fr))] gap-2 border-t pt-4 text-xs sm:justify-end">
           <a
-            className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-7 items-center rounded px-3 capitalize transition-colors duration-300"
+            className="focus-visible:ring-ring border-input bg-primary hover:bg-primary hover:border-foreground/30 inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap text-white shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
             href={project.domain}
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Live Site
+            View Demo <ExternalLink className="size-4 shrink-0" />
           </a>
           <a
-            className="bg-background hover:bg-accent text-accent-foreground dark:bg-input/30 dark:hover:bg-input/50 border-input inline-flex h-7 items-center rounded border px-3 capitalize"
+            className="focus-visible:ring-ring border-input bg-input hover:text-accent-foreground hover:border-primary/30 hover:bg-input inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
             href={project.repository}
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Repository
+            Repository <ExternalLink className="size-4 shrink-0" />
           </a>
         </div>
       </div>

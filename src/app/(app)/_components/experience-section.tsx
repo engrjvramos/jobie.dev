@@ -4,7 +4,7 @@ import { CAREER_ITEMS } from '@/lib/constants';
 
 export default function ExperienceSection() {
   return (
-    <section className="mx-auto max-w-6xl">
+    <section id="experience" className="mx-auto max-w-6xl">
       <h1 className="mb-10 text-lg uppercase">Experience</h1>
       <ol className="flex flex-col gap-14">
         {CAREER_ITEMS.sort((a, b) => b.id - a.id).map((item) => (
@@ -15,16 +15,13 @@ export default function ExperienceSection() {
                 {item.position} <span className="text-primary-500">@ {item.title}</span>
               </h2>
               <p className="text-muted-foreground mb-4">{item.description}</p>
-              <ul className="flex flex-wrap items-center gap-2">
+              {/* <div className="flex flex-wrap items-center gap-2">
                 {item.techStack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="border-secondary-500 rounded border px-3 py-0.5 font-mono text-xs whitespace-nowrap"
-                  >
+                  <Badge key={tech} variant={'secondary'}>
                     {tech}
-                  </li>
+                  </Badge>
                 ))}
-              </ul>
+              </div> */}
             </div>
           </li>
         ))}

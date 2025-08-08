@@ -25,7 +25,7 @@ export default function ThemeToggler() {
     <div className="relative">
       <Toggle
         variant="outline"
-        className="group data-[state=on]:hover:bg-muted size-9 cursor-pointer data-[state=on]:bg-transparent"
+        className="group data-[state=on]:hover:bg-muted dark:bg-input/30 size-9 cursor-pointer data-[state=on]:bg-transparent"
         pressed={theme === 'dark'}
         onPressedChange={() => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))}
         aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}

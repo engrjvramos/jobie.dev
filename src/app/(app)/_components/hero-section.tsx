@@ -1,20 +1,21 @@
 'use client';
 
+import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from '@/components/ui/marquee';
 import { TECH_ICONS } from '@/lib/constants';
 import { ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { useRef } from 'react';
 import SkillsModal from '../../../components/skills-modal';
 import { Badge } from '../../../components/ui/badge';
-import { Button } from '../../../components/ui/button';
 
 export default function HeroSection() {
   const ref = useRef(null);
 
   return (
-    <section ref={ref} className="grid h-[calc(100dvh-5rem)] place-content-center px-4">
+    <section id="home" ref={ref} className="mx-auto grid h-[calc(100dvh-5rem)] max-w-6xl place-content-center px-4">
       <motion.div
-        className="mx-auto flex max-w-5xl flex-col items-center"
+        className="flex flex-col items-center"
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
@@ -23,7 +24,7 @@ export default function HeroSection() {
         }}
       >
         <motion.div
-          className="z-10 mx-auto flex max-w-5xl flex-col items-center gap-6 text-center"
+          className="z-10 flex flex-col items-center gap-6 text-center"
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -73,7 +74,7 @@ export default function HeroSection() {
           </motion.h2>
 
           <motion.p
-            className="text-muted-foreground mx-auto max-w-2xl md:text-lg lg:text-xl"
+            className="text-muted-foreground mx-auto max-w-2xl text-balance md:text-lg lg:text-xl"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -87,7 +88,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div
-            className="mt-6 flex items-center gap-4"
+            className="group mt-6 grid w-full max-w-[12rem] grid-cols-1 gap-x-4 gap-y-2 sm:max-w-xs sm:grid-cols-2"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -96,12 +97,20 @@ export default function HeroSection() {
               delay: 0.6,
             }}
           >
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 h-9">
-              View Resume <ExternalLink />
-            </Button>
-            <Button className="bg-background hover:bg-accent text-accent-foreground dark:bg-input/30 dark:hover:bg-input/50 border-input h-9 border">
+            <a
+              className="focus-visible:ring-ring border-input bg-primary hover:bg-primary hover:border-foreground/30 inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap text-white shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
+              href={'/'}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume <ExternalLink className="size-4 shrink-0" />
+            </a>
+            <Link
+              className="focus-visible:ring-ring border-input bg-input hover:text-accent-foreground hover:border-primary/30 hover:bg-input inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
+              href={'#about'}
+            >
               Learn More
-            </Button>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -114,28 +123,20 @@ export default function HeroSection() {
               delay: 0.7,
             }}
           >
-            {/* <p className="text-muted-foreground text-center text-pretty">
-              I build smooth, responsive UIs using tools I love—clean code, smart design, and a great user experience
-              always come first.
-            </p> */}
-
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {TECH_ICONS.map(({ Icon, name }, i) => (
-                <motion.div
-                  key={name}
-                  title={name}
-                  initial={{ y: 40, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.6,
-                    ease: 'easeOut',
-                    delay: 0.8 + i * 0.05,
-                  }}
-                  className="group border-input hover:bg-accent rounded-md border p-2 shadow-2xl transition-colors"
-                >
-                  {Icon && <Icon className="size-6 saturate-0 transition-all group-hover:saturate-100" />}
-                </motion.div>
-              ))}
+            <div className="bg-background flex size-full items-center justify-center">
+              <Marquee>
+                <MarqueeFade side="left" />
+                <MarqueeFade side="right" />
+                <MarqueeContent className="max-w-[320px] sm:max-w-lg">
+                  {TECH_ICONS.map(({ Icon }, index) => (
+                    <MarqueeItem className="" key={index}>
+                      <div className="group border-input hover:bg-accent rounded-md border p-2 shadow-2xl transition-colors">
+                        {Icon && <Icon className="size-6 saturate-0 transition-all group-hover:saturate-100" />}
+                      </div>
+                    </MarqueeItem>
+                  ))}
+                </MarqueeContent>
+              </Marquee>
             </div>
 
             <motion.div
