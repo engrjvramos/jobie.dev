@@ -1,5 +1,6 @@
-import { SKILLS_BACKEND, SKILLS_FRONTEND, TOOLS_AND_PLATFORMS } from '@/lib/constants';
+import { SKILLS_BACKEND, SKILLS_CLOUD_DEVOPS, SKILLS_DATABASE_ORM, SKILLS_FRONTEND } from '@/lib/constants';
 import { TSkill } from '@/lib/types';
+import { cn } from '@/lib/utils';
 import { ArrowRight, SquareCode } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from './ui/button';
@@ -30,9 +31,10 @@ export default function SkillsModal() {
             </div>
             <DialogDescription asChild>
               <div className="space-y-5 px-4 py-6">
-                <SkillSection title="Frontend Technologies" skills={SKILLS_FRONTEND} />
-                <SkillSection title="Backend Technologies" skills={SKILLS_BACKEND} />
-                <SkillSection title="Tools & Platforms" skills={TOOLS_AND_PLATFORMS} />
+                <SkillSection title="Frontend" skills={SKILLS_FRONTEND} />
+                <SkillSection title="Backend" skills={SKILLS_BACKEND} />
+                <SkillSection title="Database/ORM" skills={SKILLS_DATABASE_ORM} />
+                <SkillSection title="Cloud/DevOps" skills={SKILLS_CLOUD_DEVOPS} />
               </div>
             </DialogDescription>
           </DialogHeader>
@@ -62,7 +64,14 @@ function SkillSection({ title, skills }: SkillSectionProps) {
           >
             {Icon && <Icon className="inline-block size-5 shrink-0" />}
             {imageSrc && (
-              <Image src={imageSrc} alt={name} width={0} height={0} sizes="100vw" className="size-5 shrink-0" />
+              <Image
+                src={imageSrc}
+                alt={name}
+                width={0}
+                height={0}
+                sizes="100vw"
+                className={cn('size-5 shrink-0', name === 'Jotai' && 'rounded bg-white p-0.5')}
+              />
             )}
             <span className="w-full truncate">{name}</span>
           </li>

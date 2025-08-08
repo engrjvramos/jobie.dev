@@ -1,18 +1,18 @@
 'use client';
 
 import { TECH_ICONS } from '@/lib/constants';
-import { MapPin } from 'lucide-react';
+import { ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useRef } from 'react';
-import SkillsModal from './skills-modal';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
+import SkillsModal from '../../../components/skills-modal';
+import { Badge } from '../../../components/ui/badge';
+import { Button } from '../../../components/ui/button';
 
 export default function HeroSection() {
   const ref = useRef(null);
 
   return (
-    <section ref={ref} className="grid min-h-dvh place-content-center">
+    <section ref={ref} className="grid h-[calc(100dvh-5rem)] place-content-center px-4">
       <motion.div
         className="mx-auto flex max-w-5xl flex-col items-center"
         initial={{ y: 40, opacity: 0 }}
@@ -41,13 +41,13 @@ export default function HeroSection() {
               delay: 0.2,
             }}
           >
-            <Badge variant={'outline'} className="border-input inline-flex items-center gap-2">
+            <Badge variant={'outline'} className="border-input inline-flex items-center gap-2 font-mono">
               <MapPin /> Manila, Philippines
             </Badge>
           </motion.div>
 
           <motion.h1
-            className="text-4xl font-bold tracking-tight text-pretty md:text-5xl lg:text-7xl"
+            className="text-[clamp(28px,5vw,72px)] font-bold tracking-tight text-pretty"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -60,7 +60,7 @@ export default function HeroSection() {
           </motion.h1>
 
           <motion.h2
-            className="mb-6 text-2xl font-semibold"
+            className="mb-6 text-[clamp(16px,5vw,24px)] font-semibold"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -69,7 +69,7 @@ export default function HeroSection() {
               delay: 0.4,
             }}
           >
-            Senior Full-Stack Engineer
+            Full-Stack Developer
           </motion.h2>
 
           <motion.p
@@ -83,7 +83,7 @@ export default function HeroSection() {
             }}
           >
             I specialize in building user-friendly web applications with a strong focus on clean design and performance
-            using <span className="text-base-800 grow dark:text-white/80">React Ecosystem</span>.
+            using <span className="text-base-800 grow-effect dark:text-white/80">React Ecosystem</span>.
           </motion.p>
 
           <motion.div
@@ -96,7 +96,9 @@ export default function HeroSection() {
               delay: 0.6,
             }}
           >
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 h-9">View Resume</Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 h-9">
+              View Resume <ExternalLink />
+            </Button>
             <Button className="bg-background hover:bg-accent text-accent-foreground dark:bg-input/30 dark:hover:bg-input/50 border-input h-9 border">
               Learn More
             </Button>
@@ -112,10 +114,10 @@ export default function HeroSection() {
               delay: 0.7,
             }}
           >
-            <p className="text-muted-foreground text-center text-pretty">
+            {/* <p className="text-muted-foreground text-center text-pretty">
               I build smooth, responsive UIs using tools I love—clean code, smart design, and a great user experience
               always come first.
-            </p>
+            </p> */}
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               {TECH_ICONS.map(({ Icon, name }, i) => (

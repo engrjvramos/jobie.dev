@@ -1,0 +1,200 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { ChevronDown } from 'lucide-react';
+import { AnimatePresence, motion, MotionProps } from 'motion/react';
+import * as React from 'react';
+
+import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+
+type TProjectData = {
+  title: string;
+  excerpt: string;
+  createdAt: string;
+  domain: string;
+  repository: string;
+  slug: string;
+  alt: string[];
+  techStack: string[];
+  thumbnail: string[];
+  actionLabel: string;
+};
+
+const DEFAULT_PRODUCT: TProjectData = {
+  title: 'Canvasium',
+  excerpt:
+    'A modern web gallery showcasing legendary artworks with fluid slideshows, masonry layout, and theme customization.',
+  createdAt: 'March 18, 2025',
+  domain: 'https://canvasium.vercel.app',
+  repository: 'https://github.com/engrjvramos/canvasium',
+  actionLabel: 'View Repository',
+  slug: 'shsf-dashboard',
+  alt: ['Canvasium light mode interface showing home page', 'Canvasium dark mode interface showing painting page'],
+  techStack: ['shadcn/ui', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+  thumbnail: ['/projects/canvasium_light.png', '/projects/slideshow_dark.png'],
+};
+
+type ProjectItemProps = React.HTMLAttributes<HTMLDivElement> &
+  MotionProps & {
+    project?: TProjectData;
+    onSwap?: (isFirstVisible: boolean) => void;
+  };
+
+const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, ref) => {
+  const { project = DEFAULT_PRODUCT, className, onSwap, ...restProps } = props;
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
+  const thumbnails = project.thumbnail;
+
+  const handleSwap = () => {
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
+    const nextIndex = (activeIndex + 1) % thumbnails.length;
+    setActiveIndex(nextIndex);
+
+    if (onSwap) {
+      onSwap(nextIndex === 0);
+    }
+
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 600);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      className={cn(
+        'bg-sidebar border-base-500 w-full max-w-96 space-y-4 overflow-hidden rounded-lg border p-4',
+        className,
+      )}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      {...restProps}
+    >
+      <div className="flex items-center justify-center gap-4">
+        <Button
+          onClick={handleSwap}
+          size="icon"
+          variant="outline"
+          className={cn(
+            'shrink-0 shadow-sm transition-all duration-200',
+            isTransitioning && 'pointer-events-none opacity-70',
+          )}
+          aria-label={`Show ${activeIndex === 0 ? 'next' : 'previous'} image`}
+          disabled={isTransitioning}
+        >
+          <div className="transition-transform duration-500 ease-out">
+            <ChevronDown
+              size={20}
+              strokeWidth={1.5}
+              className={cn('transition-all duration-300 ease-in-out', activeIndex === 1 && 'rotate-180')}
+            />
+          </div>
+        </Button>
+
+        <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+          <AnimatePresence initial={false}>
+            {thumbnails.map((src, index) => (
+              <motion.div
+                key={src}
+                className={cn('absolute inset-0 h-full w-full', activeIndex === index ? 'z-10' : 'z-0')}
+                initial={false}
+                animate={{
+                  opacity: activeIndex === index ? 1 : 0,
+                  scale: activeIndex === index ? 1 : 0.92,
+                  y: activeIndex === index ? 0 : index < activeIndex ? '-100%' : '100%',
+                }}
+                transition={{
+                  opacity: { duration: 0.5, ease: 'easeInOut' },
+                  scale: { duration: 0.5, ease: 'easeOut' },
+                  y: { duration: 0.6, ease: [0.33, 1, 0.68, 1] },
+                }}
+              >
+                <div className="border-base-500 h-full w-full overflow-hidden rounded-xl border">
+                  <Image
+                    src={src}
+                    alt={project.alt[index]}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="h-full w-full object-cover transition-all duration-500"
+                    style={{
+                      objectPosition: index === 0 ? 'top' : 'center',
+                    }}
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+
+          <div className="absolute right-2 bottom-2 z-20 flex gap-1.5 rounded-full border border-white/20 bg-black/30 px-2 py-1.5 shadow-sm backdrop-blur-sm">
+            {thumbnails.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => !isTransitioning && setActiveIndex(index)}
+                className={cn(
+                  'size-2 cursor-pointer rounded-full transition-all duration-300',
+                  activeIndex === index
+                    ? 'scale-110 bg-white ring-1 ring-white/50 ring-offset-1 ring-offset-black/30'
+                    : 'bg-white/60 hover:bg-white/80',
+                )}
+                aria-label={`View image ${index + 1}`}
+                disabled={isTransitioning}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        <div className="space-y-2">
+          <h2 className="line-clamp-1 font-medium">{project.title}</h2>
+          <p className="text-muted-foreground line-clamp-3 text-sm">{project.excerpt}</p>
+        </div>
+
+        <div className="flex flex-wrap gap-2 pb-1">
+          {project.techStack.map((tag, index) => (
+            <Badge
+              key={index}
+              variant={'outline'}
+              className="border-secondary-500 rounded border px-3 py-0.5 font-mono text-xs whitespace-nowrap"
+            >
+              {tag}
+            </Badge>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-end gap-2 text-xs">
+          <a
+            className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-7 items-center rounded px-3 capitalize transition-colors duration-300"
+            href={project.domain}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Live Site
+          </a>
+          <a
+            className="bg-background hover:bg-accent text-accent-foreground dark:bg-input/30 dark:hover:bg-input/50 border-input inline-flex h-7 items-center rounded border px-3 capitalize"
+            href={project.repository}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Repository
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+});
+
+ProjectItem.displayName = 'ProjectItem';
+
+export default ProjectItem;

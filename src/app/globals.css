@@ -203,13 +203,13 @@
   }
 }
 
-.grow {
+.grow-effect {
   text-decoration: none;
   font-weight: 700;
   position: relative;
 }
 
-.grow::before {
+.grow-effect::before {
   content: '';
   background-color: hsla(196, 61%, 58%, 0.75);
   position: absolute;
@@ -221,7 +221,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.grow:hover::before {
+.grow-effect:hover::before {
   bottom: 0;
   height: 100%;
 }

@@ -7,7 +7,7 @@ import ThemeToggler from './theme-toggler';
 
 const HEADER_NAVIGATION = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
+  { href: '#about', label: 'About' },
   { href: '/experience', label: 'Experience' },
   { href: '/projects', label: 'Projects' },
 ];
@@ -16,7 +16,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-accent fixed top-0 left-0 z-50 flex w-full items-center justify-between p-5">
+    <header className="bg-accent/25 sticky top-0 z-50 flex h-20 w-full items-center justify-between px-5 backdrop-blur-[10px]">
+      <div>jobie.dev</div>
       <nav className="flex items-center gap-2 sm:gap-5">
         {HEADER_NAVIGATION.map((item) => (
           <Link

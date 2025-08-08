@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${host_grotesk.variable} ${onest.variable} font-text bg-accent antialiased`}>
+      <body className={`${host_grotesk.variable} ${onest.variable} font-text bg-accent scroll-smooth antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
         </ThemeProvider>
