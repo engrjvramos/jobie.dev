@@ -1,4 +1,7 @@
+'use client';
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { motion } from 'motion/react';
 
 const items = [
   {
@@ -33,28 +36,58 @@ const items = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
 export default function FaqSection() {
   return (
-    <section id="faq" className="mx-auto max-w-6xl">
+    <motion.section
+      id="faq"
+      className="mx-auto max-w-6xl"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        <h1 className="text-lg uppercase">FAQs</h1>
-        <div className="space-y-4 md:col-span-2">
+        <motion.h1
+          className="text-lg uppercase"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          FAQs
+        </motion.h1>
+
+        <motion.div className="space-y-4 md:col-span-2" variants={containerVariants}>
           <Accordion type="single" collapsible className="w-full space-y-2">
-            {items.map((item) => (
-              <AccordionItem
-                value={item.id}
+            {items.map((item, index) => (
+              <motion.div
                 key={item.id}
-                className="bg-sidebar has-focus-visible:border-ring has-focus-visible:ring-ring/50 border-input rounded-md border px-4 py-1 outline-none last:border-b has-focus-visible:ring-[3px]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.05 }}
               >
-                <AccordionTrigger className="py-2 text-[15px] leading-6 hover:no-underline focus-visible:ring-0">
-                  {item.title}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-2">{item.content}</AccordionContent>
-              </AccordionItem>
+                <AccordionItem
+                  value={item.id}
+                  className="bg-sidebar has-focus-visible:border-ring has-focus-visible:ring-ring/50 border-input rounded-md border px-4 py-1 outline-none last:border-b has-focus-visible:ring-[3px]"
+                >
+                  <AccordionTrigger className="py-2 text-[15px] leading-6 hover:no-underline focus-visible:ring-0">
+                    {item.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-2">{item.content}</AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

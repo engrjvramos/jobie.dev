@@ -103,13 +103,14 @@ export default function Header() {
               />
             </svg>
           </Button>
-          <div className="font-mono font-semibold tracking-widest">Hello World!</div>
+          <div className="font-mono text-sm tracking-wide">jobie.dev</div>
         </div>
 
         <nav className="hidden items-center gap-5 sm:flex">
           {HEADER_NAVIGATION.map((item) => (
             <Link
               key={item.label}
+              id={`${item.label.toLowerCase()}-link`}
               href={item.href}
               onClick={(e) => handleScrollClick(e, item.href)}
               className={cn(

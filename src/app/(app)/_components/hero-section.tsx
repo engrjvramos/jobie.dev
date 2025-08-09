@@ -1,16 +1,21 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from '@/components/ui/marquee';
 import { TECH_ICONS } from '@/lib/constants';
 import { ExternalLink, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
-import Link from 'next/link';
 import { useRef } from 'react';
 import SkillsModal from '../../../components/skills-modal';
 import { Badge } from '../../../components/ui/badge';
 
 export default function HeroSection() {
   const ref = useRef(null);
+
+  const handleSeeMoreClick = () => {
+    const aboutLink = document.querySelector<HTMLAnchorElement>('#about-link');
+    aboutLink?.click();
+  };
 
   return (
     <section id="home" ref={ref} className="mx-auto grid h-[calc(100dvh-5rem)] max-w-6xl place-content-center px-4">
@@ -48,7 +53,7 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.h1
-            className="text-[clamp(28px,5vw,72px)] font-bold tracking-tight text-pretty"
+            className="text-[clamp(28px,5vw,72px)] leading-tight font-bold tracking-tight text-pretty md:leading-tight dark:bg-gradient-to-b dark:from-white/50 dark:via-white/80 dark:to-white dark:bg-clip-text dark:text-transparent"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -61,7 +66,7 @@ export default function HeroSection() {
           </motion.h1>
 
           <motion.h2
-            className="mb-6 text-[clamp(16px,5vw,24px)] font-semibold"
+            className="text-muted-foreground mb-6 text-[clamp(16px,5vw,24px)] font-semibold"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -105,12 +110,12 @@ export default function HeroSection() {
             >
               View Resume <ExternalLink className="size-4 shrink-0" />
             </a>
-            <Link
-              className="focus-visible:ring-ring border-input bg-input hover:text-accent-foreground hover:border-primary/30 hover:bg-input inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
-              href={'#about'}
+            <Button
+              onClick={handleSeeMoreClick}
+              className="focus-visible:ring-ring border-input bg-input hover:text-accent-foreground hover:border-primary/30 hover:bg-input text-foreground inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
             >
-              Learn More
-            </Link>
+              More About Me
+            </Button>
           </motion.div>
 
           <motion.div
