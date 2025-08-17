@@ -1,18 +1,23 @@
 import { SKILLS_BACKEND, SKILLS_CLOUD_DEVOPS, SKILLS_DATABASE_ORM, SKILLS_FRONTEND } from '@/lib/constants';
 import { TSkill } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { ArrowRight, SquareCode } from 'lucide-react';
+import { Code2 } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
+import { HoverBorderGradient } from './ui/hover-border-gradient';
 
 export default function SkillsModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant={'ghost'} className="text-muted-foreground hover:text-accent-foreground">
-          View my full arsenal <ArrowRight />
-        </Button>
+        <HoverBorderGradient
+          containerClassName="rounded-md"
+          as="button"
+          className="bg-primary flex cursor-pointer items-center gap-2 text-sm text-white"
+        >
+          My Arsenal
+          <Code2 className="size-4" />
+        </HoverBorderGradient>
       </DialogTrigger>
       <DialogContent
         className="border-input flex max-h-[min(640px,80vh)] flex-col gap-0 p-0 shadow-xl outline-none sm:max-w-xl [&>button:last-child]:top-3.5"
@@ -21,9 +26,7 @@ export default function SkillsModal() {
         <div className="overflow-y-auto">
           <DialogHeader className="contents space-y-0 text-left">
             <div className="border-input border-b px-6 py-4">
-              <DialogTitle className="mb-2 flex flex-row items-center gap-2 text-xl">
-                <SquareCode className="text-primary-500" /> My Tech Arsenal
-              </DialogTitle>
+              <DialogTitle className="mb-2 flex flex-row items-center gap-2 text-xl">My Tech Arsenal</DialogTitle>
               <DialogDescription className="text-pretty">
                 A comprehensive list of technologies, frameworks, and tools I&apos;ve mastered over the years—powering
                 everything I build.

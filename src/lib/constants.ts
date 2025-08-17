@@ -140,7 +140,7 @@ export const SKILLS_DATABASE_ORM: TSkill[] = [
 
 export const SKILLS_CLOUD_DEVOPS: TSkill[] = [
   { Icon: Vercel, name: 'Vercel' },
-  { Icon: GitLab, name: 'GitLab CI/CD' },
+  { Icon: GitLab, name: 'GitLab' },
   { Icon: GitHub, name: 'GitHub' },
   { Icon: Cloudflare, name: 'Cloudflare' },
 ];

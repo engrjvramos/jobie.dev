@@ -5,9 +5,9 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
   return (
     <div>
       <Header />
-      <div className="relative mx-auto flex max-w-7xl flex-col">
-        <div className="flex-1 space-y-20 px-8 pb-40 sm:px-16">{children}</div>
-      </div>
+      <main className="relative flex flex-col">
+        <div className="relative flex-1 space-y-20 overflow-x-hidden px-8 pb-40 sm:px-16">{children}</div>
+      </main>
       <Footer />
     </div>
   );

@@ -66,7 +66,7 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
   return (
     <motion.div
       ref={ref}
-      className={cn('border-base-500 w-full max-w-96 space-y-4 overflow-hidden rounded-xl border p-4', className)}
+      className={cn('w-full max-w-96 space-y-4 overflow-hidden rounded-xl p-4', className)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -151,7 +151,7 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
 
       <div className="space-y-3">
         <div className="space-y-2">
-          <h2 className="line-clamp-1 font-medium">{project.title}</h2>
+          <h2 className="line-clamp-1 text-lg font-semibold">{project.title}</h2>
           <p className="text-muted-foreground line-clamp-3 text-sm">{project.excerpt}</p>
         </div>
 
@@ -165,9 +165,9 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
           ))}
         </ul>
 
-        <div className="border-input mt-6 grid grid-cols-[repeat(auto-fill,minmax(9rem,1fr))] gap-2 border-t pt-4 text-xs sm:justify-end">
+        <div className="border-input mt-6 grid grid-cols-[repeat(auto-fill,minmax(9rem,1fr))] gap-2 border-t pt-4 text-sm sm:justify-end">
           <a
-            className="focus-visible:ring-ring border-input bg-primary hover:bg-primary hover:border-foreground/30 inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap text-white shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
+            className="focus-visible:ring-ring border-input bg-primary hover:bg-primary hover:border-foreground/30 inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 font-medium whitespace-nowrap text-white shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
             href={project.domain}
             target="_blank"
             rel="noopener noreferrer"
@@ -175,7 +175,7 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
             View Demo <ExternalLink className="size-4 shrink-0" />
           </a>
           <a
-            className="focus-visible:ring-ring border-input hover:text-accent-foreground hover:border-primary/30 inline-flex h-9 items-center justify-center gap-2 rounded-md border bg-zinc-50 px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 hover:bg-zinc-100 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50 dark:bg-zinc-900 dark:hover:bg-zinc-950"
+            className="focus-visible:ring-ring border-input hover:text-accent-foreground hover:border-primary/30 inline-flex h-9 items-center justify-center gap-2 rounded-md border bg-zinc-50 px-4 py-2 font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 hover:bg-zinc-100 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50 dark:bg-zinc-900 dark:hover:bg-zinc-950"
             href={project.repository}
             target="_blank"
             rel="noopener noreferrer"
