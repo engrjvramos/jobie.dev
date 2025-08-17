@@ -164,7 +164,7 @@ export const CAREER_ITEMS: TCareerItem[] = [
     ],
     description:
       'Ensured structural quality and compliance on-site by conducting inspections, resolving punchlists, and coordinating with engineers and project managers to maintain high construction standards.',
-    techStack: ['Project Management', 'Materials Testing', 'Method Statements', 'QA/QC', 'AutoCad'],
+    techStack: ['Project Management', 'Site Inspection', 'Materials Testing', 'Method Statements', 'QA/QC', 'AutoCAD'],
   },
 
   {
@@ -179,7 +179,7 @@ export const CAREER_ITEMS: TCareerItem[] = [
     ],
     description:
       'Built and maintained client websites using HTML, CSS, JavaScript, and PHP, focusing on responsive design, cross-browser compatibility, and reliable functionality.',
-    techStack: ['HTML', 'CSS', 'JavaScript', 'PHP'],
+    techStack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'aaPanel'],
   },
   {
     id: 4,
@@ -192,7 +192,19 @@ export const CAREER_ITEMS: TCareerItem[] = [
     ],
     description:
       'Modernized frontend systems using React and Next.js, leading UI development and enhancing application performance through efficient, maintainable codebases.',
-    techStack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Prisma', 'Jotai'],
+    techStack: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Tailwind',
+      'Prisma',
+      'PostgreSQL',
+      'dnd-kit',
+      'react-hook-form',
+      'Recharts',
+      'Socket.io',
+      'Husky',
+    ],
   },
   {
     id: 5,
@@ -207,6 +219,20 @@ export const CAREER_ITEMS: TCareerItem[] = [
     ],
     description:
       'Directed frontend architecture for scalable applications, introduced CI/CD pipelines, and mentored developers while focusing on performance-driven development.',
-    techStack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Tanstack Query', 'Zustand', 'Socket.io', 'CI/CD'],
+    techStack: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Tanstack Query',
+      'Zustand',
+      'react-hook-form',
+      'Chart.js',
+      'Jotai',
+      'Socket.io',
+      'CI/CD',
+      'Husky',
+      'SEO Optimization',
+    ],
   },
 ];

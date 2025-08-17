@@ -1,11 +1,9 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { ChevronDown, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion, MotionProps } from 'motion/react';
 import * as React from 'react';
 
-import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -68,17 +66,14 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
   return (
     <motion.div
       ref={ref}
-      className={cn(
-        'bg-sidebar border-base-500 w-full max-w-96 space-y-4 overflow-hidden rounded-lg border p-4',
-        className,
-      )}
+      className={cn('border-base-500 w-full max-w-96 space-y-4 overflow-hidden rounded-xl border p-4', className)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
       {...restProps}
     >
       <div className="flex items-center justify-center gap-4">
-        <Button
+        {/* <Button
           onClick={handleSwap}
           size="icon"
           variant="outline"
@@ -96,7 +91,7 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
               className={cn('transition-all duration-300 ease-in-out', activeIndex === 1 && 'rotate-180')}
             />
           </div>
-        </Button>
+        </Button> */}
 
         <div className="relative aspect-video w-full overflow-hidden rounded-xl">
           <AnimatePresence initial={false}>
@@ -160,13 +155,15 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
           <p className="text-muted-foreground line-clamp-3 text-sm">{project.excerpt}</p>
         </div>
 
-        <div className="flex flex-wrap gap-2 pb-1">
-          {project.techStack.map((tag, index) => (
-            <Badge key={index} variant={'secondary'} className="">
-              {tag}
-            </Badge>
+        <ul className="flex flex-wrap gap-1.5">
+          {project.techStack.map((t) => (
+            <li key={t} className="flex">
+              <span className="text-muted-foreground inline-flex items-center rounded-lg border bg-zinc-50 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-900">
+                {t}
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="border-input mt-6 grid grid-cols-[repeat(auto-fill,minmax(9rem,1fr))] gap-2 border-t pt-4 text-xs sm:justify-end">
           <a
@@ -178,7 +175,7 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
             View Demo <ExternalLink className="size-4 shrink-0" />
           </a>
           <a
-            className="focus-visible:ring-ring border-input bg-input hover:text-accent-foreground hover:border-primary/30 hover:bg-input inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
+            className="focus-visible:ring-ring border-input hover:text-accent-foreground hover:border-primary/30 inline-flex h-9 items-center justify-center gap-2 rounded-md border bg-zinc-50 px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 hover:bg-zinc-100 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50 dark:bg-zinc-900 dark:hover:bg-zinc-950"
             href={project.repository}
             target="_blank"
             rel="noopener noreferrer"

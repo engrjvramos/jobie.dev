@@ -112,7 +112,7 @@ export default function HeroSection() {
             </a>
             <Button
               onClick={handleSeeMoreClick}
-              className="focus-visible:ring-ring border-input bg-input hover:text-accent-foreground hover:border-primary/30 hover:bg-input text-foreground inline-flex h-9 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50"
+              className="focus-visible:ring-ring border-input hover:text-accent-foreground hover:border-primary/30 text-foreground inline-flex h-9 items-center justify-center gap-2 rounded-md border bg-zinc-50 px-4 py-2 text-sm font-medium whitespace-nowrap shadow-none transition-all duration-100 hover:border-b-4 hover:bg-zinc-100 focus-visible:ring-1 focus-visible:outline-none active:scale-[0.97] active:border-b disabled:pointer-events-none disabled:opacity-50 dark:bg-zinc-900 dark:hover:bg-zinc-950"
             >
               More About Me
             </Button>

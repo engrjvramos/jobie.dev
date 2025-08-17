@@ -48,6 +48,15 @@ export default function ExperienceSection() {
                 {item.position} <span className="text-primary-500">@ {item.title}</span>
               </h2>
               <p className="text-muted-foreground mb-4">{item.description}</p>
+              <ul className="flex flex-wrap gap-1.5">
+                {item.techStack.map((t) => (
+                  <li key={t} className="flex">
+                    <span className="text-muted-foreground inline-flex items-center rounded-lg border bg-zinc-50 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-900">
+                      {t}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.li>
         ))}

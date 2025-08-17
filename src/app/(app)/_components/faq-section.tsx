@@ -20,7 +20,7 @@ const items = [
     id: '3',
     title: 'What are you currently learning?',
     content:
-      "I'm currently working toward becoming a certified AWS AI Practitioner, with a growing interest in machine learning. I'm expanding my skills beyond frontend development to prepare for future opportunities in AI-driven web experiences.",
+      "I'm currently working toward becoming a certified AWS AI Practitioner, with a growing interest in machine learning. I'm expanding my skills beyond web development to prepare for future opportunities in AI-driven web experiences.",
   },
   {
     id: '4',

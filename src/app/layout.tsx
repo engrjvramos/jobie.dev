@@ -16,12 +16,13 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: 'Jobie Ramos | Frontend Web Developer',
+  title: 'Jobie Ramos | Full-Stack Developer',
   description:
-    'I’m Jobie, a frontend developer crafting modern, responsive, and accessible web experiences using React, Next.js, and Tailwind CSS. Check out my portfolio and latest projects.',
+    "I'm Jobie, a full-stack developer crafting modern, responsive, and accessible web experiences using React, Next.js, and Tailwind CSS. Check out my portfolio and latest projects.",
   keywords: [
     'Jobie Ramos',
     'Frontend Developer',
+    'Full Stack Developer',
     'React Developer',
     'Next.js Portfolio',
     'Web Developer Philippines',
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Jobie Ramos | Frontend Web Developer',
-    description: 'Visit my personal portfolio to see the projects I’ve built with React, Next.js, and Tailwind CSS.',
+    title: 'Jobie Ramos | Full-Stack Developer',
+    description: "Visit my personal portfolio to see the projects I've built with React, Next.js, and Tailwind CSS.",
     url: 'https://jobie.dev',
     siteName: 'jobie.dev',
     images: [
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Jobie.dev – Frontend Portfolio',
+        alt: 'Jobie.dev – Full-Stack Portfolio',
       },
     ],
     locale: 'en_PH',
@@ -61,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${host_grotesk.variable} ${onest.variable} font-text bg-background antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system">
+        <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
       </body>
