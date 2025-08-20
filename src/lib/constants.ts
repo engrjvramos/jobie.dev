@@ -27,7 +27,7 @@ import {
   TypeScriptIcon,
   Vercel,
 } from '@/components/svg';
-import { TCareerItem, TSkill } from './types';
+import { TCareerItem, TProjectData, TSkill } from './types';
 
 export const TECH_ICONS: TSkill[] = [
   { Icon: ShadcnuiIcon, name: 'Shadcn UI' },
@@ -234,5 +234,32 @@ export const CAREER_ITEMS: TCareerItem[] = [
       'Husky',
       'SEO Optimization',
     ],
+  },
+];
+
+export const PROJECTS_DATA: TProjectData[] = [
+  {
+    id: 1,
+    title: 'Canvasium',
+    excerpt:
+      'An elegant Galleria-style slideshow web app showcasing iconic artworks with smooth animations and masonry layout design.',
+    domain: 'https://canvasium.vercel.app',
+    repository: 'https://github.com/engrjvramos/canvasium',
+    actionLabel: 'View Repository',
+    alt: ['Project Screenshot 1', 'Project Screenshot 2'],
+    techStack: ['shadcn/ui', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    thumbnail: ['/projects/canvasium_screenshot_1.png', '/projects/canvasium_screenshot_2.png'],
+  },
+  {
+    id: 2,
+    title: 'Terrapedia',
+    excerpt:
+      'A modern country information web app that lets you explore details about countries from around the world.',
+    domain: 'https://terrapedia.vercel.app',
+    repository: 'https://github.com/engrjvramos/terrapedia',
+    actionLabel: 'View Repository',
+    alt: ['Project Screenshot 1', 'Project Screenshot 2'],
+    techStack: ['shadcn/ui', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Luxon'],
+    thumbnail: ['/projects/terrapedia_screenshot_1.png', '/projects/terrapedia_screenshot_2.png'],
   },
 ];

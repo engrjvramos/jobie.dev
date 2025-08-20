@@ -13,3 +13,15 @@ export type TCareerItem = {
   description: string;
   techStack: string[];
 };
+
+export type TProjectData = {
+  id: number;
+  title: string;
+  excerpt: string;
+  domain: string;
+  repository: string;
+  alt: string[];
+  techStack: string[];
+  thumbnail: string[];
+  actionLabel: string;
+};

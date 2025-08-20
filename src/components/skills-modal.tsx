@@ -13,7 +13,7 @@ export default function SkillsModal() {
         <HoverBorderGradient
           containerClassName="rounded-md"
           as="button"
-          className="bg-primary flex cursor-pointer items-center gap-2 text-sm text-white"
+          className="bg-background text-foreground flex cursor-pointer items-center gap-2 text-sm"
         >
           My Arsenal
           <Code2 className="size-4" />

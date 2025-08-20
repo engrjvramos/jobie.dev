@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from '@/components/ui/marquee';
 import { TECH_ICONS } from '@/lib/constants';
-import { FileDownIcon } from 'lucide-react';
+import { ArrowDownCircleIcon, FileDownIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useRef } from 'react';
 import SkillsModal from '../../../components/skills-modal';
@@ -105,14 +105,16 @@ export default function HeroSection() {
               delay: 0.6,
             }}
           >
-            <SkillsModal />
-            <Button variant={'outline'} className="h-10">
+            <Button className="h-10">
               View Resume <FileDownIcon className="size-4" />
+            </Button>
+            <Button variant={'outline'} className="h-10" onClick={handleSeeMoreClick}>
+              About Me <ArrowDownCircleIcon />
             </Button>
           </motion.div>
 
           <motion.div
-            className="mt-20 flex max-w-lg flex-col items-center gap-5"
+            className="mt-20 flex max-w-lg flex-col items-center gap-10"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -136,6 +138,7 @@ export default function HeroSection() {
                 </MarqueeContent>
               </Marquee>
             </div>
+            <SkillsModal />
           </motion.div>
         </motion.div>
       </motion.div>

@@ -1,47 +1,22 @@
 'use client';
 
-import { ExternalLink } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion, MotionProps } from 'motion/react';
 import * as React from 'react';
 
+import { Button } from '@/components/ui/button';
+import { TProjectData } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-type TProjectData = {
-  title: string;
-  excerpt: string;
-  createdAt: string;
-  domain: string;
-  repository: string;
-  slug: string;
-  alt: string[];
-  techStack: string[];
-  thumbnail: string[];
-  actionLabel: string;
-};
-
-const DEFAULT_PRODUCT: TProjectData = {
-  title: 'Canvasium',
-  excerpt:
-    'A modern web gallery showcasing legendary artworks with fluid slideshows, masonry layout, and theme customization.',
-  createdAt: 'March 18, 2025',
-  domain: 'https://canvasium.vercel.app',
-  repository: 'https://github.com/engrjvramos/canvasium',
-  actionLabel: 'View Repository',
-  slug: 'shsf-dashboard',
-  alt: ['Canvasium light mode interface showing home page', 'Canvasium dark mode interface showing painting page'],
-  techStack: ['Shadcn UI', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-  thumbnail: ['/projects/canvasium_light.png', '/projects/slideshow_dark.png'],
-};
-
 type ProjectItemProps = React.HTMLAttributes<HTMLDivElement> &
   MotionProps & {
-    project?: TProjectData;
+    project: TProjectData;
     onSwap?: (isFirstVisible: boolean) => void;
   };
 
 const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, ref) => {
-  const { project = DEFAULT_PRODUCT, className, onSwap, ...restProps } = props;
+  const { project, className, onSwap, ...restProps } = props;
 
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [isTransitioning, setIsTransitioning] = React.useState(false);
@@ -73,7 +48,7 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
       {...restProps}
     >
       <div className="flex items-center justify-center gap-4">
-        {/* <Button
+        <Button
           onClick={handleSwap}
           size="icon"
           variant="outline"
@@ -91,7 +66,7 @@ const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>((props, r
               className={cn('transition-all duration-300 ease-in-out', activeIndex === 1 && 'rotate-180')}
             />
           </div>
-        </Button> */}
+        </Button>
 
         <div className="relative aspect-video w-full overflow-hidden rounded-xl">
           <AnimatePresence initial={false}>

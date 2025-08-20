@@ -1,6 +1,7 @@
 'use client';
 
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { PROJECTS_DATA } from '@/lib/constants';
 import { motion } from 'motion/react';
 import ProjectItem from './project-item';
 
@@ -35,9 +36,9 @@ export default function ProjectsSection() {
           Selected Projects
         </motion.h1>
         <motion.ul className="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] place-items-center gap-8 sm:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))]">
-          {[1, 2, 3, 4, 5, 6].map((x, index) => (
+          {PROJECTS_DATA.map((project, index) => (
             <motion.li
-              key={x}
+              key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.05 }}
@@ -52,7 +53,7 @@ export default function ProjectsSection() {
                 proximity={64}
                 inactiveZone={0.01}
               />
-              <ProjectItem />
+              <ProjectItem project={project} />
             </motion.li>
           ))}
         </motion.ul>
