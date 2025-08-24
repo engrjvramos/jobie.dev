@@ -105,9 +105,14 @@ export default function HeroSection() {
               delay: 0.6,
             }}
           >
-            <Button className="h-10">
+            <a
+              href="https://drive.google.com/file/d/1F3GyU06rjiFUQMF2kxOZft3vwl6Y29aJ/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md px-3 text-sm font-medium whitespace-nowrap shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+            >
               View Resume <FileDownIcon className="size-4" />
-            </Button>
+            </a>
             <Button variant={'outline'} className="h-10" onClick={handleSeeMoreClick}>
               About Me <ArrowDownCircleIcon />
             </Button>
