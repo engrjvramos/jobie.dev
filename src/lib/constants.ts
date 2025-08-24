@@ -240,15 +240,15 @@ export const CAREER_ITEMS: TCareerItem[] = [
 export const PROJECTS_DATA: TProjectData[] = [
   {
     id: 1,
-    title: 'Canvasium',
+    title: 'InkBloc',
     excerpt:
-      'An elegant Galleria-style slideshow web app showcasing iconic artworks with smooth animations and masonry layout design.',
-    domain: 'https://canvasium.vercel.app',
-    repository: 'https://github.com/engrjvramos/canvasium',
+      'A fullstack minimalist todo app with authentication, email verification, and powerful task management features.',
+    domain: 'https://inkbloc.vercel.app',
+    repository: 'https://github.com/engrjvramos/inkbloc',
     actionLabel: 'View Repository',
     alt: ['Project Screenshot 1', 'Project Screenshot 2'],
-    techStack: ['shadcn/ui', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    thumbnail: ['/projects/canvasium_screenshot_1.png', '/projects/canvasium_screenshot_2.png'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'Neon', 'Resend', 'Better Auth', 'react-hook-form'],
+    thumbnail: ['/projects/inkbloc_screenshot_1.png', '/projects/inkbloc_screenshot_2.png'],
   },
   {
     id: 2,
@@ -259,7 +259,31 @@ export const PROJECTS_DATA: TProjectData[] = [
     repository: 'https://github.com/engrjvramos/terrapedia',
     actionLabel: 'View Repository',
     alt: ['Project Screenshot 1', 'Project Screenshot 2'],
-    techStack: ['shadcn/ui', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Luxon'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Luxon'],
     thumbnail: ['/projects/terrapedia_screenshot_1.png', '/projects/terrapedia_screenshot_2.png'],
+  },
+  {
+    id: 3,
+    title: 'Canvasium',
+    excerpt:
+      'An elegant Galleria-style slideshow web app showcasing iconic artworks with smooth animations and masonry layout design.',
+    domain: 'https://canvasium.vercel.app',
+    repository: 'https://github.com/engrjvramos/canvasium',
+    actionLabel: 'View Repository',
+    alt: ['Project Screenshot 1', 'Project Screenshot 2'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion'],
+    thumbnail: ['/projects/canvasium_screenshot_1.png', '/projects/canvasium_screenshot_2.png'],
+  },
+  {
+    id: 4,
+    title: 'Presello Clone',
+    excerpt:
+      'A fullstack real estate web app inspired by Presello, which allows users to sign up, log in, and create their own property listings.',
+    domain: 'https://presello-clone.vercel.app',
+    repository: 'https://github.com/engrjvramos/presello-clone',
+    actionLabel: 'View Repository',
+    alt: ['Project Screenshot 1', 'Project Screenshot 2'],
+    techStack: ['React', 'JavaScript', 'Tailwind CSS', 'Leaflet.js', 'Firebase'],
+    thumbnail: ['/projects/presello_screenshot_1.png', '/projects/presello_screenshot_2.png'],
   },
 ];

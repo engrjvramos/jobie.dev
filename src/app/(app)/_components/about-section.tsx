@@ -50,8 +50,8 @@ export default function AboutSection() {
           <p>
             Since then, I&apos;ve had the privilege of working with excellent companies, and gained invaluable knowledge
             from seasoned developers, which further improved my skills significantly. These experiences have resulted in
-            a diverse portfolio that showcases my growth, adaptability, and drive to continuously learn and improve as a
-            full-stack developer.
+            a diverse portfolio that showcases my growth and drive to continuously learn and improve as a full-stack
+            developer.
           </p>
         </motion.div>
       </div>
