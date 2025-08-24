@@ -36,8 +36,8 @@ export default function SkillsModal() {
               <div className="space-y-5 px-4 py-6">
                 <SkillSection title="Frontend" skills={SKILLS_FRONTEND} />
                 <SkillSection title="Backend" skills={SKILLS_BACKEND} />
-                <SkillSection title="Database/ORM" skills={SKILLS_DATABASE_ORM} />
-                <SkillSection title="Cloud/DevOps" skills={SKILLS_CLOUD_DEVOPS} />
+                <SkillSection title="Database" skills={SKILLS_DATABASE_ORM} />
+                <SkillSection title="Cloud" skills={SKILLS_CLOUD_DEVOPS} />
               </div>
             </DialogDescription>
           </DialogHeader>

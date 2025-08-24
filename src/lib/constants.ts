@@ -3,6 +3,7 @@ import {
   ChakraUIIcon,
   Cloudflare,
   Expressjs,
+  Firebase,
   FramerIcon,
   GitHub,
   GitLab,
@@ -127,6 +128,7 @@ export const SKILLS_FRONTEND: TSkill[] = [
 export const SKILLS_BACKEND: TSkill[] = [
   { Icon: Nodejs, name: 'Node.js' },
   { Icon: Expressjs, name: 'Express' },
+  { Icon: Firebase, name: 'Firebase' },
 ];
 
 export const SKILLS_DATABASE_ORM: TSkill[] = [
