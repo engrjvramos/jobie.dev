@@ -10,18 +10,18 @@ const items = [
     content:
       'It started with curiosity—I wanted to understand how websites and apps were built. I took a deliberate break from engineering and dedicated my time to learning HTML, CSS, JavaScript, and modern web tools. Building projects helped me strengthen my frontend skills and fueled my desire to pursue this path full-time.',
   },
-  {
-    id: '2',
-    title: 'How did you learn web development?',
-    content:
-      "I'm entirely self-taught. I studied through online platforms like Codecademy and Udemy, learning by doing. I built real-world projects and focused on creating high-quality, responsive websites and web apps. Along the way, I developed a strong problem-solving mindset and a love for clean, maintainable code.",
-  },
-  {
-    id: '3',
-    title: 'What are you currently learning?',
-    content:
-      "I'm currently working toward becoming a certified AWS AI Practitioner, with a growing interest in machine learning. I'm expanding my skills beyond web development to prepare for future opportunities in AI-driven web experiences.",
-  },
+  // {
+  //   id: '2',
+  //   title: 'How did you learn web development?',
+  //   content:
+  //     "I'm entirely self-taught. I studied through online platforms like Codecademy and Udemy, learning by doing. I built real-world projects and focused on creating high-quality, responsive websites and web apps. Along the way, I developed a strong problem-solving mindset and a love for clean, maintainable code.",
+  // },
+  // {
+  //   id: '3',
+  //   title: 'What are you currently learning?',
+  //   content:
+  //     "I'm currently working toward becoming a certified AWS AI Practitioner, with a growing interest in machine learning. I'm expanding my skills beyond web development to prepare for future opportunities in AI-driven web experiences.",
+  // },
   {
     id: '4',
     title: 'Do you take freelance or contract work?',
