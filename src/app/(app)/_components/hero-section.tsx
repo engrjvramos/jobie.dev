@@ -78,7 +78,7 @@ export default function HeroSection() {
               delay: 0.4,
             }}
           >
-            Full-Stack Developer
+            Frontend Developer
           </motion.h2>
 
           <motion.p
