@@ -16,9 +16,9 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: 'Jobie Ramos | Full-Stack Developer',
+  title: 'Jobie Ramos | Frontend Developer',
   description:
-    "I'm Jobie, a full-stack developer crafting modern, responsive, and accessible web experiences using React, Next.js, and Tailwind CSS. Check out my portfolio and latest projects.",
+    "I'm Jobie, a frontend developer crafting modern, responsive, and accessible web experiences using React, Next.js, and Tailwind CSS. Check out my portfolio and latest projects.",
   keywords: [
     'Jobie Ramos',
     'Frontend Developer',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Jobie Ramos | Full-Stack Developer',
+    title: 'Jobie Ramos | Frontend Developer',
     description: "Visit my personal portfolio to see the projects I've built with React, Next.js, and Tailwind CSS.",
     url: 'https://jobie.dev',
     siteName: 'jobie.dev',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Jobie.dev – Full-Stack Portfolio',
+        alt: 'Jobie.dev – Frontend Portfolio',
       },
     ],
     locale: 'en_PH',
