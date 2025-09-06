@@ -249,7 +249,7 @@ export const PROJECTS_DATA: TProjectData[] = [
     repository: 'https://github.com/engrjvramos/inkbloc',
     actionLabel: 'View Repository',
     alt: ['Project Screenshot 1', 'Project Screenshot 2'],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'Neon', 'Resend', 'Better Auth', 'react-hook-form'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'Neon', 'Resend', 'Better Auth'],
     thumbnail: ['/projects/inkbloc_screenshot_1.png', '/projects/inkbloc_screenshot_2.png'],
   },
   {
